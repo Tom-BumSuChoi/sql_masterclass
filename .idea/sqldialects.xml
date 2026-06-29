@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/10.sql" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/11.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/12.sql" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/Query.sql" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/Query_1.sql" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/Query_2.sql" dialect="SQLite" />
