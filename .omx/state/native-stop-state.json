@@ -1,0 +1,44 @@
+{
+  "sessions": {
+    "019eafac-6242-71a0-bf9a-b80d784cffc3": {
+      "ordinary_no_progress_guard": {
+        "fingerprint": "ordinary|응, 맞아. `is`는 **연산자(operator)**야. `is`는 특히 `null` 비교용으로 쓰는 연산자고, 특징은 이거야: - `=`: `null`이 들어가면 결과가 `unknown` (참/거짓이 아님) - `is`: `null`도 안전하게 비교 - `null is null` → `true` - `a is b`는 `a`와 `b`가 둘 다 `null`이면 `true` 실무 쓰임: - `col is null` - `col is not null` 원하면 `is`와 `is not`, `=`, `is distinct from`의 차이도 한 번에 정리해줄게.",
+        "first_seen_at": "2026-06-10T04:19:33.368Z",
+        "last_seen_at": "2026-06-10T04:19:33.368Z",
+        "repeat_count": 1,
+        "last_turn_id": "019eafc1-be97-75c3-9426-fa2e7f7600db",
+        "last_thread_id": null
+      }
+    },
+    "019ebaa4-3302-7aa0-82b9-d89ad3fdce47": {
+      "ordinary_no_progress_guard": {
+        "fingerprint": "ordinary|다시 가져다 놨습니다. ```text /users/tomchoi/developer/sql_masterclass/database.db ``` 검증 결과: ```text integrity_check: ok movies rows: 265,838 ``` 이제 datagrip 다시 열면 이 db를 보면 됩니다.",
+        "first_seen_at": "2026-06-12T13:17:35.669Z",
+        "last_seen_at": "2026-06-12T13:17:35.669Z",
+        "repeat_count": 1,
+        "last_turn_id": "019ebbfa-a995-7900-815a-a39e0867294b",
+        "last_thread_id": null
+      }
+    },
+    "019ebbfb-8d42-7243-b993-337d68b55572": {
+      "ordinary_no_progress_guard": {
+        "fingerprint": "ordinary|현재 쿼리: ```sql select director, avg(rating) as avg_rating, count(*) as count from movies where director is not null and rating is not null group by director having count > 5 order by avg_rating desc; ``` 논리적 실행 순서는 이렇게 봐야 해. ```text 1. from movies 2. where director is not null and rating is not null 3. group by director 4. having count > 5 5. select director, avg(rating), count(*) 6. order by avg_rating desc ``` 단계별로 풀면: ```sql from movies ``` 먼저 `movies` 테이블에서 데이터를 가져와. ```sql where director is not null and rating is not null ``` 그다음 감독이 없는 행, 평점이 없는 행을 제거해. 이 시점은 아직 감독별로 묶기 전이라 “영화 개수”는 계산되지 않았어. ```sql group by director ``` 남은 행들을 감독별로 묶어. 예를 들면: ```text bong 감독 영화들 nolan 감독 영화들 spielberg 감독 영화들 ``` 이런 그룹이 생김. ```sql having count > 5 ``` 그룹이 만들어진 뒤에 그룹 조건을 검사해. 근데 여기서 네 쿼리는 문제가 있어. `count`는 `select`에서 만든 별칭이라 `having`에서 바로 못 쓰는 db가 많고, postgres에서는 보통 안 된다고 보면 돼. 정석은 이렇게 써야 해: ```sql having count(*) > 5 ``` 또 “5편 이상”이면 `> 5`가 아니라 `>= 5`야. ```sql having count(*) >= 5 ``` 마지막으로: ```sql select director, avg(rating), count(*) ``` 출력할 컬럼을 만든다. ```sql order by avg_rating desc ``` 평균 평점 높은 순으로 정렬한다. `order by`에서는 `avg_rating` 같은 별칭 사용 가능해. 정리하면 네 의도대로라면 이게 맞아: ```sql select director, avg(rating) as avg_rating, count(*) as movie_count from movies where director is not null and rating is not null group by director having count(*) >= 5 order by avg_rating desc; ```",
+        "first_seen_at": "2026-06-12T13:53:56.203Z",
+        "last_seen_at": "2026-06-12T13:53:56.203Z",
+        "repeat_count": 1,
+        "last_turn_id": "019ebc1c-0bcc-7291-a21b-82f982163f20",
+        "last_thread_id": null
+      }
+    },
+    "019ebf4f-375e-7a80-81a8-31f4f71a2cfc": {
+      "ordinary_no_progress_guard": {
+        "fingerprint": "ordinary|다음 3문제. 이번엔 유형 다르게 낼게. 1. `genres`에 `comedy`가 포함된 영화 중에서 `runtime`을 기준으로 다음처럼 분류하세요. - `short`: 60분 미만 - `normal`: 60분 이상 120분 이하 - `long`: 120분 초과 각 분류별 영화 수를 조회하세요. 2. 감독별 최고 평점 영화를 1편씩 조회하세요. 단, 감독 이름이 비어 있지 않은 영화만 포함하고, 결과는 감독명 오름차순으로 정렬하세요. 출력 컬럼: `director`, `title`, `rating` 힌트: 서브쿼리나 윈도우 함수 사용 가능. 3. 영화 제목 `title`과 원제 `original_title`이 서로 다른 영화만 조회하세요. 그중 `original_language`별로 영화 수를 세고, 영화 수가 많은 순서대로 상위 10개 언어를 조회하세요.",
+        "first_seen_at": "2026-06-13T15:56:27.344Z",
+        "last_seen_at": "2026-06-13T15:56:27.344Z",
+        "repeat_count": 1,
+        "last_turn_id": "019ec1b2-9c3e-7da1-9897-9c422d34a850",
+        "last_thread_id": null
+      }
+    }
+  }
+}

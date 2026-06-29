@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "sessions": {
+    "019eafac-6242-71a0-bf9a-b80d784cffc3": {
+      "session_id": "019eafac-6242-71a0-bf9a-b80d784cffc3",
+      "leader_thread_id": "019eafac-6242-71a0-bf9a-b80d784cffc3",
+      "updated_at": "2026-06-10T04:19:33.700Z",
+      "threads": {
+        "019eafac-6242-71a0-bf9a-b80d784cffc3": {
+          "thread_id": "019eafac-6242-71a0-bf9a-b80d784cffc3",
+          "kind": "leader",
+          "first_seen_at": "2026-06-10T03:56:28.643Z",
+          "last_seen_at": "2026-06-10T04:19:33.700Z",
+          "last_turn_id": "019eafc1-be97-75c3-9426-fa2e7f7600db",
+          "turn_count": 9
+        }
+      }
+    },
+    "019ebaa4-3302-7aa0-82b9-d89ad3fdce47": {
+      "session_id": "019ebaa4-3302-7aa0-82b9-d89ad3fdce47",
+      "leader_thread_id": "019ebaa4-3302-7aa0-82b9-d89ad3fdce47",
+      "updated_at": "2026-06-12T13:17:35.817Z",
+      "threads": {
+        "019ebaa4-3302-7aa0-82b9-d89ad3fdce47": {
+          "thread_id": "019ebaa4-3302-7aa0-82b9-d89ad3fdce47",
+          "kind": "leader",
+          "first_seen_at": "2026-06-12T07:04:07.855Z",
+          "last_seen_at": "2026-06-12T13:17:35.817Z",
+          "last_turn_id": "019ebbfa-a995-7900-815a-a39e0867294b",
+          "turn_count": 14
+        }
+      }
+    },
+    "019ebbfb-8d42-7243-b993-337d68b55572": {
+      "session_id": "019ebbfb-8d42-7243-b993-337d68b55572",
+      "leader_thread_id": "019ebbfb-8d42-7243-b993-337d68b55572",
+      "updated_at": "2026-06-12T13:53:56.338Z",
+      "threads": {
+        "019ebbfb-8d42-7243-b993-337d68b55572": {
+          "thread_id": "019ebbfb-8d42-7243-b993-337d68b55572",
+          "kind": "leader",
+          "first_seen_at": "2026-06-12T13:24:06.180Z",
+          "last_seen_at": "2026-06-12T13:53:56.338Z",
+          "last_turn_id": "019ebc1c-0bcc-7291-a21b-82f982163f20",
+          "turn_count": 5
+        }
+      }
+    },
+    "019ebf4f-375e-7a80-81a8-31f4f71a2cfc": {
+      "session_id": "019ebf4f-375e-7a80-81a8-31f4f71a2cfc",
+      "leader_thread_id": "019ebf4f-375e-7a80-81a8-31f4f71a2cfc",
+      "updated_at": "2026-06-13T15:56:27.759Z",
+      "threads": {
+        "019ebf4f-375e-7a80-81a8-31f4f71a2cfc": {
+          "thread_id": "019ebf4f-375e-7a80-81a8-31f4f71a2cfc",
+          "kind": "leader",
+          "first_seen_at": "2026-06-13T15:05:06.675Z",
+          "last_seen_at": "2026-06-13T15:56:27.759Z",
+          "last_turn_id": "019ec1b2-9c3e-7da1-9897-9c422d34a850",
+          "turn_count": 3
+        }
+      }
+    }
+  }
+}

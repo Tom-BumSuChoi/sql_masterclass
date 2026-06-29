@@ -1,0 +1,6 @@
+{
+  "last_turn_at": "2026-06-12T13:53:56.357Z",
+  "turn_count": 5,
+  "last_progress_at": "2026-06-12T13:53:56.357Z",
+  "last_agent_output": "현재 쿼리:\n\n```sql\nSELECT\n    director,\n    avg(rating) AS avg_rating,\n    count(*) AS count\nFROM m"
+}
