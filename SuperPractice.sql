@@ -43,6 +43,10 @@ ORDER BY avg_runtime DESC
 LIMIT 10;
 
 -- Calculate the average rating for movies released in the 21st century.
+SELECT AVG(movies.rating)
+FROM movies
+WHERE release_date >= 2000;
+
 -- Find the director with the highest average movie runtime.
 -- List the top 5 most prolific directors (those who have directed the most movies).
 -- Find the highest and lowest rating of each director.
