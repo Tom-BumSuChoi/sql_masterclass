@@ -66,6 +66,14 @@ ORDER BY total_movie DESC
 LIMIT 5;
 
 -- Find the highest and lowest rating of each director.
+SELECT movies.director,
+       MIN(movies.rating) AS lowest,
+       MAX(movies.rating) AS highest
+FROM movies
+WHERE director IS NOT NULL
+  AND rating IS NOT NULL
+GROUP BY director;
+
 -- Find the director that has made the most money (revenue - budget)
 -- Calculate the average rating for movies longer than 2 hours.
 -- Find the year with the most movies released.
