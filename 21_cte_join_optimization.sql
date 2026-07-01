@@ -27,6 +27,6 @@ FROM movies AS m
          JOIN MaxRaingForCountry AS c
               ON m.country = c.country
                   AND m.rating = c.max_rating
-ORDER BY m.country ASC,
-         m.title ASC
+ORDER BY m.country,
+         m.title
 LIMIT 15;

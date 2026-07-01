@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/10.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/11.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/12.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/13.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/14.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/15.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/16.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/17.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/Query.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/Query_1.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/Query_2.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/Query_3.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/Query_4.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/Query_5.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/Query_6.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/Query_7.sql" dialect="SQLite" />
-    <file url="file://$PROJECT_DIR$/Query_8.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/20_correlated_subquery.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/21_cte_join_optimization.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/22_window_function_rank.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/23_window_function_partition.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/24_string_functions.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/25_null_handling.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/26_window_functions_three.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/SuperPractice.sql" dialect="SQLite" />
   </component>
 </project>
