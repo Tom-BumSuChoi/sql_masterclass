@@ -48,6 +48,13 @@ FROM movies
 WHERE release_date >= 2000;
 
 -- Find the director with the highest average movie runtime.
+SELECT movies.director,
+       AVG(runtime) AS avg_runtime
+FROM movies
+WHERE director IS NOT NULL
+GROUP BY director
+ORDER BY avg_runtime DESC;
+
 -- List the top 5 most prolific directors (those who have directed the most movies).
 -- Find the highest and lowest rating of each director.
 -- Find the director that has made the most money (revenue - budget)
