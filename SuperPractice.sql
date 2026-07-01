@@ -17,3 +17,11 @@ FROM movies
 WHERE genres IS NOT NULL
 GROUP BY genres
 ORDER BY total_movies DESC;
+
+-- How many movies have a rating greater than 6? What is the most common?
+SELECT movies.rating,
+       COUNT(*) AS total_movies
+FROM movies
+WHERE rating > 6
+GROUP BY rating
+ORDER BY total_movies DESC
