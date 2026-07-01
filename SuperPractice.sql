@@ -35,6 +35,9 @@ GROUP BY release_date
 ORDER BY total_movies DESC;
 
 -- List the top 10 years with the highest average movie runtime.
+SELECT movies.release_date,
+       avg_runtime
+FROM movies
 
 -- Calculate the average rating for movies released in the 21st century.
 -- Find the director with the highest average movie runtime.
