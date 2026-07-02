@@ -91,6 +91,14 @@ FROM movies
 WHERE runtime > 120;
 
 -- Find the year with the most movies released.
+SELECT movies.release_date,
+       COUNT(*) AS total_count
+FROM movies
+WHERE release_date IS NOT NULL
+GROUP BY release_date
+ORDER BY total_count DESC
+LIMIT 1;
+
 -- Find the average runtime of movies for each decade.
 -- Calculate the percentage of movies with a rating above 8.0.
 -- List directors who have never made a movie shorter than 2 hours.
