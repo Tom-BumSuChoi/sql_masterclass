@@ -86,6 +86,10 @@ ORDER BY profit DESC
 LIMIT 10;
 
 -- Calculate the average rating for movies longer than 2 hours.
+SELECT AVG(movies.rating) AS avg_rating
+FROM movies
+WHERE runtime > 120;
+
 -- Find the year with the most movies released.
 -- Find the average runtime of movies for each decade.
 -- Calculate the percentage of movies with a rating above 8.0.
