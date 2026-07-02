@@ -75,6 +75,16 @@ WHERE director IS NOT NULL
 GROUP BY director;
 
 -- Find the director that has made the most money (revenue - budget)
+SELECT director,
+       SUM(revenue) - SUM(budget) AS profit
+FROM movies
+WHERE director IS NOT NULL
+  AND revenue IS NOT NULL
+  AND budget IS NOT NULL
+GROUP BY director
+ORDER BY profit DESC
+LIMIT 10;
+
 -- Calculate the average rating for movies longer than 2 hours.
 -- Find the year with the most movies released.
 -- Find the average runtime of movies for each decade.
