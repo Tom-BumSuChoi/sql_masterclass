@@ -134,4 +134,14 @@ WHERE director IS NOT NULL
 GROUP BY director
 HAVING MIN(runtime) >= 120;
 
+-- List the top 5 years where the differecne between the highest and lowest rated movie was the greatest.
+SELECT movies.release_date,
+       MAX(rating) - MIN(rating) AS difference
+FROM movies
+WHERE rating IS NOT NULL
+  AND release_date IS NOT NULL
+GROUP BY release_date
+ORDER BY difference DESC
+LIMIT 5
+
 -- Categorize and group movies by length.
