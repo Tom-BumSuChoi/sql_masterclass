@@ -100,6 +100,38 @@ ORDER BY total_count DESC
 LIMIT 1;
 
 -- Find the average runtime of movies for each decade.
+SELECT (release_date / 10) * 10 AS decade,
+       AVG(runtime)             AS avg_runtime
+FROM movies
+WHERE release_date IS NOT NULL
+  AND runtime IS NOT NULL
+GROUP BY decade
+ORDER BY avg_runtime DESC;
+
 -- Calculate the percentage of movies with a rating above 8.0.
+SELECT SUM(CASE
+               WHEN rating > 8.0 THEN 1
+               ELSE 0
+    END) * 100 / COUNT(*)
+FROM movies
+WHERE rating IS NOT NULL;
+
 -- List directors who have never made a movie shorter than 2 hours.
+SELECT movies.director,
+       SUM(CASE
+               WHEN runtime > 120 THEN 0
+               ELSE 1
+           END) AS has_movie_shorter_than_2h
+FROM movies
+WHERE director IS NOT NULL
+GROUP BY director
+HAVING has_movie_shorter_than_2h = 0;
+
+-- 위의 것 보다 아래가 나은듯
+SELECT director
+FROM movies
+WHERE director IS NOT NULL
+GROUP BY director
+HAVING MIN(runtime) >= 120;
+
 -- Categorize and group movies by length.
