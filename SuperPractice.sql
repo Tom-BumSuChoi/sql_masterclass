@@ -142,6 +142,19 @@ WHERE rating IS NOT NULL
   AND release_date IS NOT NULL
 GROUP BY release_date
 ORDER BY difference DESC
-LIMIT 5
+LIMIT 5;
 
 -- Categorize and group movies by length.
+SELECT CASE
+           WHEN movies.runtime < 90
+               THEN 'Short'
+           WHEN movies.runtime BETWEEN 90 AND 120
+               THEN 'Normal'
+           WHEN movies.runtime > 120
+               THEN 'Long'
+           END  AS runtime_category,
+       COUNT(*) AS total_movies
+FROM movies
+WHERE runtime IS NOT NULL
+GROUP BY runtime_category
+ORDER BY total_movies DESC;
